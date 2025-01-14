@@ -1,11 +1,9 @@
 import React from 'react';
-import './App.css';
+import PersonalWebsite from './components/PersonalWebsite';
 
 function App() {
   return (
-    <div className="App">
-      <h1>Coming Soon...</h1>
-    </div>
+    <PersonalWebsite />
   );
 }
 
