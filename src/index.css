@@ -1,0 +1,6 @@
+/* index.css */
+
+/* Import App.css which contains the main styling */
+@import './App.css';
+
+/* Additional global styles can be added here */

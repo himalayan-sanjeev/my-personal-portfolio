@@ -1,71 +1,70 @@
-# Portfolio Website for [Your Name]
+# Getting Started with Create React App
 
-[Your Name]
-Ruby on Rails Developer
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-[Your Email] | [LinkedIn Profile] | [Twitter Handle]
+## Available Scripts
 
----
+In the project directory, you can run:
 
-## About Me
+### `npm start`
 
-Brief introduction highlighting your background, skills, and interests as a Ruby on Rails developer.
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-## Projects
+The page will reload when you make changes.\
+You may also see any lint errors in the console.
 
-### Featured Projects
+### `npm test`
 
-1. **Project 1: [Project Name]**
-   - Brief description of the project
-   - Technologies used: Ruby on Rails, PostgreSQL, JavaScript, CSS
-   - Link to GitHub repository
-   - Live demo link (if available)
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-2. **Project 2: [Project Name]**
-   - Brief description of the project
-   - Technologies used: Ruby on Rails, MongoDB, React, Redux
-   - Link to GitHub repository
-   - Live demo link (if available)
+### `npm run build`
 
-### Other Notable Projects
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-- List other relevant projects with brief descriptions and links to GitHub repositories
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
 
-## Skills
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-- Programming Languages: Ruby, JavaScript
-- Frameworks: Ruby on Rails, React
-- Databases: PostgreSQL, MongoDB
-- Version Control: Git
-- Operating Systems: macOS, Linux
+### `npm run eject`
 
-## Experience
+**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-### [Company Name], [Position]
-[Employment Dates]
+If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-- Brief description of responsibilities and accomplishments
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-### [Previous Company], [Previous Position]
-[Previous Employment Dates]
+You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-- Brief description of responsibilities and accomplishments
+## Learn More
 
-## Education
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-- [Degree], [Field of Study], [University Name], [Graduation Date]
+To learn React, check out the [React documentation](https://reactjs.org/).
 
-## Certifications
+### Code Splitting
 
-- List any relevant certifications you hold
+This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-## Contact Information
+### Analyzing the Bundle Size
 
-Email: [your email]
-Phone: [your phone number]
-LinkedIn: [your LinkedIn profile URL]
-GitHub: [your GitHub profile URL]
+This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
----
+### Making a Progressive Web App
 
-[Your Name] © [Year]. All rights reserved.
+This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+
+### Advanced Configuration
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+
+### Deployment
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+
+### `npm run build` fails to minify
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
