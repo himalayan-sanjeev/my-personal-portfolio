@@ -1,0 +1,215 @@
+/* Alternative Skills.css with grid-based badges */
+.skills-section {
+  margin: 2rem 0;
+}
+
+.skills-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.skill-category-card {
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.skill-category-card:hover {
+  transform: translateY(-5px);
+}
+
+.skill-category-card h4 {
+  font-size: 1.1rem;
+  margin-bottom: 15px;
+  color: var(--primary-color);
+  border-bottom: 2px solid var(--primary-color);
+  padding-bottom: 8px;
+}
+
+/* Using CSS Grid instead of Flexbox for more precise control */
+.skill-badges {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(95px, 1fr));
+  gap: 10px;
+}
+
+/* Adjust grid columns based on number of skills */
+.skill-badges:has(.skill-badge:nth-child(1):nth-last-child(1)) {
+  grid-template-columns: repeat(1, 1fr);
+}
+
+.skill-badges:has(.skill-badge:nth-child(1):nth-last-child(2)),
+.skill-badges:has(.skill-badge:nth-child(2):nth-last-child(1)) {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.skill-badges:has(.skill-badge:nth-child(1):nth-last-child(3)),
+.skill-badges:has(.skill-badge:nth-child(2):nth-last-child(2)),
+.skill-badges:has(.skill-badge:nth-child(3):nth-last-child(1)) {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.skill-badge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.08);
+  border-radius: 6px;
+  padding: 12px 8px;
+  transition: all 0.3s ease;
+  cursor: default;
+  border-bottom: 3px solid transparent;
+}
+
+.skill-badge:hover {
+  background-color: rgba(var(--primary-rgb), 0.2);
+  transform: scale(1.05);
+}
+
+.skill-icon-container {
+  margin-bottom: 8px;
+  font-size: 1.8rem;
+  display: flex;
+  justify-content: center;
+}
+
+.skill-icon {
+  color: #ccc;
+  transition: color 0.3s ease;
+}
+
+.skill-badge:hover .skill-icon {
+  color: var(--primary-color);
+}
+
+/* Colors for specific icons */
+.skill-icon.html {
+  color: #E44D26;
+}
+
+.skill-icon.css {
+  color: #264DE4;
+}
+
+.skill-icon.js {
+  color: #F7DF1E;
+}
+
+.skill-icon.react {
+  color: #61DAFB;
+}
+
+.skill-icon.rails {
+  color: #CC0000;
+}
+
+.skill-icon.python {
+  color: #3776AB;
+}
+
+.skill-icon.django {
+  color: #092E20;
+}
+
+.skill-icon.postgres {
+  color: #336791;
+}
+
+.skill-icon.mongodb {
+  color: #47A248;
+}
+
+.skill-icon.mysql {
+  color: #4479A1;
+}
+
+.skill-icon.git {
+  color: #F05032;
+}
+
+.skill-icon.docker {
+  color: #2496ED;
+}
+
+.skill-icon.pandas {
+  color: #150458;
+}
+
+.skill-icon.numpy {
+  color: #013243;
+}
+
+.skill-icon.nltk {
+  color: #FF6C37;
+}
+
+.skill-icon.postman {
+  color: #FF6C37;
+}
+
+.skill-icon.swagger {
+  color: #85EA2D;
+}
+
+.skill-icon.rest {
+  color: #38bdf8;
+}
+
+.skill-icon.redis {
+  color: #DC382D;
+}
+
+.skill-name {
+  font-size: 0.8rem;
+  font-weight: 500;
+  text-align: center;
+  margin-bottom: 5px;
+  /* Handle long skill names */
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  height: 2.4em;
+  line-height: 1.2em;
+  /* Add min-height to ensure consistent sizing */
+  min-height: 2.4em;
+}
+
+.skill-dots {
+  display: flex;
+  gap: 3px;
+  margin-top: 5px;
+}
+
+.skill-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.2);
+  transition: background-color 0.3s ease;
+}
+
+.skill-dot.filled {
+  background-color: var(--primary-color, #38bdf8);
+}
+
+/* Make cards with few items more compact */
+.skill-category-card:has(.skill-badges:has(.skill-badge:nth-child(-n+3):nth-last-child(-n+3))) {
+  padding-bottom: 15px;
+}
+
+/* For smaller screens */
+@media (max-width: 768px) {
+  .skills-container {
+    grid-template-columns: 1fr;
+  }
+
+  .skill-badges {
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  }
+}
