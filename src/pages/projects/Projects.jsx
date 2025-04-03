@@ -14,6 +14,7 @@ import heavenTechImage from './images/heaven-tech.png';
 import suswasthyaImage from './images/suswasthya.jpg';
 import artsyLensImage from './images/artsy.png';
 import nepaliNewsImage from './images/nlp.jpg';
+import ragAppImage from './images/rag_app.png';
 
 import './Projects.css';
 
@@ -36,6 +37,14 @@ const Projects = () => {
       imgUrl: blogImage,
       tags: ["Web", "Ruby on Rails", "Personal"],
       codeLink: "https://github.com/himalayan-sanjeev/",
+      demoLink: "#",
+    },
+    {
+      title: "RAG Implementation in RoR",
+      description: "A Ruby on Rails implementation of Retrieval Augmented Generation (RAG) for enhanced AI responses using document context and semantic search capabilities.",
+      imgUrl: ragAppImage,
+      tags: ["Ruby on Rails", "AI", "Web", "RAG Implementation", "Semantic Search", "Retrieval Augmented Generation"],
+      codeLink: "https://github.com/himalayan-sanjeev/retrieval-augmented-generation-rails",
       demoLink: "#",
     },
     {
