@@ -11,6 +11,109 @@
   padding: 0 15px;
 }
 
+.projects-category {
+  margin-top: 40px;
+}
+
+.category-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--dark-color);
+  margin: 10px 0 20px;
+}
+
+.project-type-filter {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+}
+
+.project-type-item {
+  padding: 6px 14px;
+  margin: 0 6px 8px;
+  font-size: 13px;
+  font-weight: 600;
+  background-color: transparent;
+  color: var(--text-color);
+  border-radius: 20px;
+  cursor: pointer;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  transition: all 0.25s ease;
+}
+
+.project-type-item:hover {
+  color: var(--primary-color);
+  transform: translateY(-2px);
+}
+
+.project-type-item.active-type {
+  background-color: var(--primary-color);
+  color: var(--white-color);
+  border-color: transparent;
+}
+
+/* Visual improvements and spacing between filter rows */
+.project-filter {
+  gap: 8px;
+  padding: 14px 10px;
+  border-radius: 12px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.7));
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 12px;
+  box-shadow: 0 4px 18px rgba(23, 43, 77, 0.04);
+}
+
+/* small separator between tag filters and type filters */
+.project-filter+.project-type-filter {
+  margin-top: 6px;
+  padding-top: 12px;
+  border-top: 1px solid rgba(0, 0, 0, 0.04);
+}
+
+/* pill refinement */
+.project-filter-item {
+  background-color: var(--white-color);
+  border-radius: 999px;
+  padding: 8px 16px;
+  margin: 6px 6px 6px 6px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-color);
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, color 0.15s ease;
+  box-shadow: 0 2px 8px rgba(16, 24, 40, 0.04);
+  border: 1px solid rgba(0, 0, 0, 0.04);
+}
+
+.project-filter-item:hover {
+  transform: translateY(-3px);
+  color: var(--primary-color);
+}
+
+.project-filter-item.active-filter {
+  background: var(--primary-color);
+  color: var(--white-color);
+  box-shadow: 0 8px 24px rgba(16, 24, 40, 0.08);
+}
+
+/* keyboard focus styles for accessibility */
+.project-filter-item:focus-visible,
+.project-type-item:focus-visible {
+  outline: 3px solid rgba(59, 130, 246, 0.18);
+  outline-offset: 3px;
+}
+
+/* smaller visual size for project-type items */
+.project-type-item {
+  padding: 6px 12px;
+  margin: 6px 6px;
+  font-size: 13px;
+  border-radius: 999px;
+}
+
 .project-filter {
   display: flex;
   justify-content: center;

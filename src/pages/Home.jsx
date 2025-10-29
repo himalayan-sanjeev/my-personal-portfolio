@@ -36,8 +36,14 @@ const Home = () => {
             I'm a <span ref={typedTextRef}></span>
           </h2>
           <p className="home-description">
-            I specialize in creating clean, efficient, and user-friendly digital experiences. With expertise in full-stack development, backend systems, and data-driven solutions, I’m passionate about building software that solves real-world problems and delivers meaningful impact. Let’s collaborate to turn your ideas into reality!
+            I specialize in creating clean, efficient, and user-friendly digital experiences. With expertise in full-stack development, backend systems, and data-driven solutions, I’m passionate about building software that solves real-world problems and delivers meaningful impact.</p>
+          <p>Beyond code, I love reflecting on technology, human history, and contemporary societal issues, finding meaning in how they shape our shared future.
           </p>
+          <br />
+          <p>
+            Let’s collaborate to turn your ideas into reality!
+          </p>
+          <br />
           <div className="home-buttons">
             <Link to="/projects" className="btn btn-primary">
               View My Work
@@ -74,7 +80,7 @@ const Home = () => {
         <div className="home-image">
           <div className="profile-image-container">
             <img
-              src="images/profile-image.jpg"
+              src="images/profile-icon.png"
               alt="Sanjeev Poudel"
               className="profile-image"
               onError={(e) => {
@@ -85,7 +91,7 @@ const Home = () => {
           </div>
         </div>
       </div>
-    </section>
+    </section >
   );
 };
 

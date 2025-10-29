@@ -92,7 +92,7 @@ const About = () => {
       institution: 'Nepal College of Information Technology',
     },
     {
-      degree: 'HSEB (+2)',
+      degree: 'HSEB (10+2)',
       institution: 'St. Xavier\'s College, Kathmandu'
     }
   ];
@@ -169,21 +169,132 @@ const About = () => {
           </div>
 
           <SkillsSection skills={skills} />
-          <br></br>
+          <br />
           <div className="experience-section">
             <h3>Experience</h3>
             <div className="timeline">
-              {experiences.map((exp, index) => (
-                <div className="timeline-item" key={index}>
-                  <div className="timeline-dot"></div>
-                  <div className="timeline-content">
-                    <h4>{exp.title}</h4>
-                    <h5>{exp.company}</h5>
-                    <p className="period">{exp.period}</p>
-                    <p>{exp.description}</p>
+              {/* Software Engineer - Danphe Software Labs */}
+              <div className="timeline-item">
+                <div className="timeline-dot"></div>
+                <div className="timeline-content">
+                  <h4>Software Engineer</h4>
+                  <h5>Danphe Software Labs · Full-time</h5>
+                  <p className="period">Oct 2021 – Present · Kathmandu, Nepal (Hybrid)</p>
+
+                  <p>
+                    As a backend engineer, I’ve contributed to multiple international SaaS and web platform projects, collaborating with distributed teams to deliver scalable, production-ready solutions using Ruby on Rails and Agile practices.
+                  </p>
+
+                  <h4 style={{ marginTop: '12px' }}>Key Contributions</h4>
+
+                  <div className="contrib-grid">
+                    <div className="contrib-card">
+                      <div className="contrib-card-inner">
+                        <h5 className="contrib-title">Fluid Commerce (USA)</h5>
+                        <p className="contrib-role">Backend feature development · API integrations · Code quality</p>
+                        <p className="contrib-desc">Contributed to the U.S.-based SaaS eCommerce platform powering direct sales and MLM businesses, as part of external engineering team. Gained hands-on experience Collaborating with global, cross-functional teams coordinating across international time zones on backend feature development, API design and integrations, and code quality improvements in a distributed agile environment and delivering scalable, production-ready features.</p>
+                        <div className="contrib-tags">
+                          <span className="contrib-tag">eCommerce</span>
+                          <span className="contrib-tag">APIs</span>
+                          <span className="contrib-tag">Fair Share</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="contrib-card">
+                      <div className="contrib-card-inner">
+                        <h5 className="contrib-title">Root Beer Club / Float (USA)</h5>
+                        <p className="contrib-role">Shopify integrations · Order automation</p>
+                        <p className="contrib-desc">Contributed to backend systems integrating Shopify and ShipStation to automate order processing and improve inventory management, helping streamline subscription and eCommerce workflows.</p>
+                        <div className="contrib-tags">
+                          <span className="contrib-tag">Shopify</span>
+                          <span className="contrib-tag">ShipStation</span>
+                          <span className="contrib-tag">Integrations</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="contrib-card">
+                      <div className="contrib-card-inner">
+                        <h5 className="contrib-title">HeavenTech (USA)</h5>
+                        <p className="contrib-role">Third-party API integrations · Recharge Subscriptions</p>
+                        <p className="contrib-desc">Supported backend infrastructure integrating Shopify and Recharge APIs to ensure smooth user experiences, subscription handling, and payment reliability for eCommerce operations.</p>
+                        <div className="contrib-tags">
+                          <span className="contrib-tag">Shopify</span>
+                          <span className="contrib-tag">Recharge</span>
+                          <span className="contrib-tag">Payments</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="role-skills">
+                    <strong>Skills:</strong>
+                    <div className="skills-list">
+                      <span className="role-skill">Ruby on Rails</span>
+                      <span className="role-skill">REST APIs</span>
+                      <span className="role-skill">Test Driven Development </span>
+                      <span className="role-skill">Relational Databases </span>
+                      <span className="role-skill">Third Party API Integrations</span>
+                      <span className="role-skill">Cross Functional Team Collaboration </span>
+                      <span className="role-skill">CI/CD</span>
+                      <span className="role-skill">Query Optimization</span>
+                      <span className="role-skill">Software Infrastructure</span>
+                    </div>
                   </div>
                 </div>
-              ))}
+              </div>
+
+              {/* Associate Software Engineer */}
+              <div className="timeline-item">
+                <div className="timeline-dot"></div>
+                <div className="timeline-content">
+                  <h4>Associate Software Engineer</h4>
+                  <h5>Danphe Software Labs</h5>
+                  <p className="period">May 2021 – Sep 2021 · Remote</p>
+                  <p>
+                    Worked under the mentorship of senior developers, gaining hands-on experience in Ruby on Rails, PostgreSQL, and RSpec. Contributed to internal and client projects focusing on backend development, API integration, and testing, which led to a full-time position as a Software Engineer.
+                  </p>
+                  <div className="role-skills">
+                    <strong>Skills:</strong>
+                    <div className="skills-list">
+                      <span className="role-skill">Ruby</span>
+                      <span className="role-skill">Ruby on Rails</span>
+                      <span className="role-skill">Web Fundamentals</span>
+                      <span className="role-skill">MVC</span>
+                      <span className="role-skill">RSpec</span>
+                      <span className="role-skill">Object Relational Mapping(ORM)</span>
+                      <span className="role-skill">API Development</span>
+                      <span className="role-skill">React JS</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Freelance / Volunteer */}
+              <div className="timeline-item">
+                <div className="timeline-dot"></div>
+                <div className="timeline-content">
+                  <h4>Freelance Software Engineer / ICT Assistant</h4>
+                  <h5>Freelancer</h5>
+                  <p className="period">Nov 2019 – Jan 2021 · Kathmandu, Nepal (Remote)</p>
+                  <p>
+                    Undertook freelance and volunteer projects involving ICT assistance and web development for local community and non-profit organizations, including STAAR Nepal NGO and alumni and welfare societies. Provided technical and content support, handled WordPress site setup, customization, and maintenance, and created documentation and digital content.
+                  </p>
+                  <div className="role-skills">
+                    <strong>Skills:</strong>
+                    <div className="skills-list">
+                      <span className="role-skill">WordPress</span>
+                      <span className="role-skill">Content Writing</span>
+                      <span className="role-skill">Client Communication</span>
+                      <span className="role-skill">Digital Collaboration</span>
+                      <span className="role-skill">Technical Documentation</span>
+                      <span className="role-skill">ICT</span>
+
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
 
