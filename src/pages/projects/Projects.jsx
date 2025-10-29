@@ -20,7 +20,6 @@ import './Projects.css';
 
 const Projects = () => {
   const [activeFilter, setActiveFilter] = useState('All');
-  const [activeCategory, setActiveCategory] = useState('All');
   const [animateCard, setAnimateCard] = useState({ y: 0, opacity: 1 });
 
   const projects = [
@@ -163,15 +162,17 @@ const Projects = () => {
 
   const [filteredProjects, setFilteredProjects] = useState(projects);
 
-  const applyFilters = (tag = activeFilter, category = activeCategory) => {
+  const categories = ['Client', 'Personal', 'Academic'];
+
+  const applyFilters = (tag = activeFilter) => {
     let result = projects;
 
-    if (tag && tag !== 'All') {
-      result = result.filter(project => project.tags.includes(tag));
-    }
-
-    if (category && category !== 'All') {
-      result = result.filter(project => project.category === category);
+    if (!tag || tag === 'All') {
+      // no-op, show all
+    } else if (categories.includes(tag)) {
+      result = projects.filter(project => project.category === tag);
+    } else {
+      result = projects.filter(project => project.tags.includes(tag));
     }
 
     setFilteredProjects(result);
@@ -183,18 +184,8 @@ const Projects = () => {
 
     setTimeout(() => {
       setAnimateCard({ y: 0, opacity: 1 });
-      applyFilters(tag, activeCategory);
-    }, 500);
-  };
-
-  const handleCategoryFilter = (category) => {
-    setActiveCategory(category);
-    setAnimateCard({ y: 100, opacity: 0 });
-
-    setTimeout(() => {
-      setAnimateCard({ y: 0, opacity: 1 });
-      applyFilters(activeFilter, category);
-    }, 500);
+      applyFilters(tag);
+    }, 300);
   };
 
   return (
@@ -211,7 +202,7 @@ const Projects = () => {
         </div>
 
         <div className="project-filter">
-          {['All', 'Web', 'Ruby on Rails', 'API Development', 'Python', 'Machine Learning', 'Database Design', 'Data Analytics', "eCommerce"].map((item, index) => (
+          {['All', 'Web', 'Ruby on Rails', 'API Development', 'Python', 'Machine Learning', 'Database Design', 'Data Analytics', 'eCommerce', 'Client', 'Personal', 'Academic'].map((item, index) => (
             <div
               key={index}
               onClick={() => handleProjectFilter(item)}
@@ -226,23 +217,71 @@ const Projects = () => {
           ))}
         </div>
 
-        <div className="project-type-filter">
-          {['All', 'Client', 'Personal', 'Academic'].map((type, idx) => (
-            <div
-              key={idx}
-              onClick={() => handleCategoryFilter(type)}
-              onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ' || e.key === 'Spacebar') handleCategoryFilter(type); }}
-              role="button"
-              tabIndex={0}
-              aria-pressed={activeCategory === type}
-              className={`project-type-item ${activeCategory === type ? 'active-type' : ''}`}
-            >
-              {type}
-            </div>
-          ))}
-        </div>
+        {categories.includes(activeFilter) ? (
+          <div className="projects-category">
+            <h3 className="category-title">{activeFilter} Projects</h3>
 
-        {activeCategory === 'All' ? (
+            <div
+              className="projects-grid"
+              style={{
+                transform: `translateY(${animateCard.y}px)`,
+                opacity: animateCard.opacity,
+                transition: 'all 0.5s ease'
+              }}
+            >
+              {filteredProjects.length > 0 ? (
+                filteredProjects.map((project, index) => (
+                  <div className="project-card" key={`${activeFilter}-${index}`}>
+                    <div className="project-img">
+                      <img
+                        src={project.imgUrl}
+                        alt={project.title}
+                        onError={(e) => {
+                          e.target.onerror = null;
+                          e.target.src = '/placeholder-project.jpg';
+                        }}
+                      />
+                    </div>
+
+                    <div className="project-content">
+                      <h3 className="project-title">{project.title}</h3>
+                      <p className="project-description">{project.description}</p>
+
+                      <div className="project-tags">
+                        {project.tags.map((tag, tagIndex) => (
+                          <span className="project-tag" key={tagIndex}>
+                            {tag}
+                          </span>
+                        ))}
+                      </div>
+
+                      <div className="project-links">
+                        <a
+                          href={project.codeLink}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="project-link"
+                        >
+                          <FaGithub /> Code
+                        </a>
+                        <a
+                          href={project.demoLink}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="project-link"
+                        >
+                          <FaExternalLinkAlt /> Demo
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                ))
+              ) : (
+                <p style={{ gridColumn: '1/-1', color: 'var(--text-color)' }}>No projects in this section.</p>
+              )}
+            </div>
+          </div>
+        ) : (
           <div
             className="projects-grid"
             style={{
@@ -302,75 +341,6 @@ const Projects = () => {
               <p style={{ gridColumn: '1/-1', color: 'var(--text-color)' }}>No projects found.</p>
             )}
           </div>
-        ) : (
-          (() => {
-            const projectsInSection = filteredProjects.filter(p => p.category === activeCategory);
-            return (
-              <div className="projects-category">
-                <h3 className="category-title">{activeCategory} Projects</h3>
-
-                <div
-                  className="projects-grid"
-                  style={{
-                    transform: `translateY(${animateCard.y}px)`,
-                    opacity: animateCard.opacity,
-                    transition: 'all 0.5s ease'
-                  }}
-                >
-                  {projectsInSection.length > 0 ? (
-                    projectsInSection.map((project, index) => (
-                      <div className="project-card" key={`${activeCategory}-${index}`}>
-                        <div className="project-img">
-                          <img
-                            src={project.imgUrl}
-                            alt={project.title}
-                            onError={(e) => {
-                              e.target.onerror = null;
-                              e.target.src = '/placeholder-project.jpg';
-                            }}
-                          />
-                        </div>
-
-                        <div className="project-content">
-                          <h3 className="project-title">{project.title}</h3>
-                          <p className="project-description">{project.description}</p>
-
-                          <div className="project-tags">
-                            {project.tags.map((tag, tagIndex) => (
-                              <span className="project-tag" key={tagIndex}>
-                                {tag}
-                              </span>
-                            ))}
-                          </div>
-
-                          <div className="project-links">
-                            <a
-                              href={project.codeLink}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="project-link"
-                            >
-                              <FaGithub /> Code
-                            </a>
-                            <a
-                              href={project.demoLink}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="project-link"
-                            >
-                              <FaExternalLinkAlt /> Demo
-                            </a>
-                          </div>
-                        </div>
-                      </div>
-                    ))
-                  ) : (
-                    <p style={{ gridColumn: '1/-1', color: 'var(--text-color)' }}>No projects in this section.</p>
-                  )}
-                </div>
-              </div>
-            );
-          })()
         )}
       </div>
     </section>
